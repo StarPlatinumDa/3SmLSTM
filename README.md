@@ -3,5 +3,5 @@ This is the official pytorch implementation of our paper 3SmLSTM: Symmetric Feat
 
 ####  3SmLSTM architecture
 <p align="center">
-   <img src="hyperformer.png" alt="drawing" width="800"/>
+   <img src="full.png" alt="drawing" width="800"/>
 </p>
