@@ -81,8 +81,9 @@ python main.py --config config/nturgbd-cross-subject/joint.yaml --device 0 --bas
 
 ## Acknowledgements
 
-This repo is based on [Hyperformer](https://github.com/ZhouYuxuanYX/Hyperformer) and [CTR-GCN](https://github.com/Uason-Chen/CTR-GCN). The training strategy is based on [CTR-GCN].
-Thanks to the original authors for their work!
+This repo is based on [Hyperformer](https://github.com/ZhouYuxuanYX/Hyperformer) and [CTR-GCN](https://github.com/Uason-Chen/CTR-GCN). The training strategy is based on CTR-GCN.
+
+Thanks to the original authors for their great work!
 
 ## Citation
 
