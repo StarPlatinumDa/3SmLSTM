@@ -1,5 +1,11 @@
 # 3SmLSTM
-This is the official pytorch implementation of our paper 3SmLSTM: Symmetric Feature Mixing MatrixLSTM with Specific Skeletal Connectivity Encoding for Skeleton-Based Action Recognition
+This is the official PyTorch implementation of our paper 3SmLSTM: Symmetric Feature Mixing MatrixLSTM with Specific Skeletal Connectivity Encoding for Skeleton-Based Action Recognition
+The paper will be published in ICIC 2025.
+
+## Efficiency
+| Model | Parameters | FLOPs | Acc on NTU 120 X-Sub | Acc on NTU 120 X-Set|
+| -------- | ------- | -------- | -------- |
+| 3SmLSTM | 2.0M | 2.60G |  89.9 | 91.2 |
 
 ####  3SmLSTM architecture
 <p align="center">
