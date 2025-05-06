@@ -4,7 +4,7 @@ The paper will be published in ICIC 2025.
 
 ## Efficiency
 | Model | Parameters | FLOPs | Acc on NTU 120 X-Sub | Acc on NTU 120 X-Set|
-| -------- | ------- | -------- | -------- |
+| -------- | ------- | -------- | -------- | -------- |
 | 3SmLSTM | 2.0M | 2.60G |  89.9 | 91.2 |
 
 ####  3SmLSTM architecture
