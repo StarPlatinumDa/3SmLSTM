@@ -5,7 +5,8 @@ This is the official pytorch implementation of our paper 3SmLSTM: Symmetric Feat
 <p align="center">
    <img src="full.png" alt="drawing" width="800"/>
 </p>
-# Preparation
+
+#  Preparation
 
 ### Download datasets.
 
