@@ -472,17 +472,19 @@ class ViLLayer(nn.Module):
 
         # up-projection
         # 向上投影将值维度从dim变成2*expansion*dim
+        # print('before proj:',x.shape) # [768,64,12]
         x_inner = self.proj_up(x) # [768,64,48]
         # 将值维度分成两个expansion*dim  [B,S,expansion*dim]
         x_mlstm, z = torch.chunk(x_inner, chunks=2, dim=-1)
         # print('after proj x_mlstm:', x_mlstm.shape)# [768,64,24]
 
         # mlstm branch  因果1维卷积 或 3维转4维进行2维卷积
+        # x_mlstm_conv = self.conv(x_mlstm)
 
-
-        # 时间卷积
+        # 改成时间卷积
+        # print('reverse',reverse_X(x_mlstm,T).shape)
         x_mlstm_conv=combine_X(self.conv(reverse_X(x_mlstm, T)))
- 
+        # print('x_mlstm_conv',x_mlstm_conv.shape)
 
 
 
@@ -502,11 +504,15 @@ class ViLLayer(nn.Module):
         h_tilde_state_skip = h_tilde_state + (self.learnable_skip * x_mlstm_conv_act)
 
         z=combine_X(self.conv1(reverse_X(z, T)))
-
+        # output / z branch
+        # print('skip,z',h_tilde_state_skip.shape,z.shape)
+        # h_state = h_tilde_state_skip * F.silu(z)
         h_state = h_tilde_state_skip + F.silu(z)
+        # print('h_state', h_state.shape)
 
         # down-projection
         x = self.proj_down(h_state)
+        # print('final_x',x.shape)
 
 
         return x
@@ -587,6 +593,8 @@ class ViLBlock(nn.Module):
         # 这里的输入还是embedding后flatten的[128,64,192]   [B,序列长度,dim]
         x = self.drop_path(x, self._forward_path,{'T':T})
 
+        # 不加norm和drop_path
+        # x=self._forward_path(x)
         return x
 
     def reset_parameters(self):
