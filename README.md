@@ -96,7 +96,6 @@ Thanks to the original authors for their great work!
 
 Please cite this work if you find it useful.
 
-# Contact
-For any questions, feel free to talk in the question block or kristinakawayi@gmail.com
+
 
 
