@@ -4,10 +4,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-# sencond-order pooling
+
+# second order pooling
 from .MPNCOV import CovpoolLayer,SqrtmLayer,TriuvecLayer
 # mLSTM
 from .vision_lstm_Tconv import ViLBlock
+# utils
 from .vision_lstm_util import combine_X,reverse_X,MultiScale_TemporalConv
 
 
@@ -188,12 +190,21 @@ class Model(nn.Module):
         # 由通道数加倍的卷积+激活函数+通道数由2倍到3倍的卷积+激活函数+通道数变为embed_dim的卷积组成
         # 总的就是把通道数翻3倍后再变为embed_dim
         # Conv2d进行卷积时的输入为(batch_size,channels,h,w)所以改变的是第1维
-
+        # stem.append(nn.Conv2d(in_channels=in_channels, out_channels=2 * in_channels, kernel_size=(1, 1), stride=(1, 1),
+        #                       padding=(0, 0)))
+        # stem.append(nn.GELU())
+        # stem.append(
+        #     nn.Conv2d(in_channels=2 * in_channels, out_channels=3 * in_channels, kernel_size=(1, 1), stride=(1, 1),
+        #               padding=(0, 0)))
+        # stem.append(nn.GELU())
+        # stem.append(nn.Conv2d(in_channels=3 * in_channels, out_channels=embed_dim, kernel_size=(1, 1), stride=(1, 1),
+        #                       padding=(0, 0)))
+        # self.stem = nn.ModuleList(stem)
 
         # 备选一次卷积到目标维度
         self.proj_up = nn.Conv2d(in_channels=in_channels, out_channels=embed_dim, kernel_size=(1, 1), stride=(1, 1),
                                  padding=(0, 0))
-        # 位置编码测试
+        # 位置编码
         # self.pos_emb=Pos_Embed(embed_dim,num_frames,num_point)
 
         # 可学习的时空编码
