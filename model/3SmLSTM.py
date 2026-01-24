@@ -166,7 +166,7 @@ class TCN_ViL_unit(nn.Module):
 class Model(nn.Module):
     def __init__(self, num_class=60, num_point=20, num_person=2, num_frames=64, graph=None, graph_args=dict(),
                  in_channels=3,
-                 drop_out=0.2, dim=144, **kwargs):
+                 drop_out=0.2, dim=120, **kwargs):
 
         super(Model, self).__init__()
 
@@ -320,3 +320,4 @@ class Model(nn.Module):
         # x = self.fc(x)
 
         return x
+
