@@ -579,14 +579,18 @@ class ViLBlock(nn.Module):
 
         # 等维度映射
         # self.same_proj = nn.Linear(in_features=dim, out_features=dim, bias=True)
-        self.learnable_skip = nn.Parameter(torch.ones(dim))
+        
+        # self.learnable_skip = nn.Parameter(torch.ones(dim))
 
         self.reset_parameters()
 
     def _forward_path(self, x,T):
         x = self.norm(x)
         # x = self.layer(x)
-        x = self.layer(x,T) + x * self.learnable_skip
+
+        x = self.layer(x,T)
+        
+        # x = self.layer(x,T) + x * self.learnable_skip
         return x
 
     def forward(self, x: torch.Tensor,T) -> torch.Tensor:
@@ -600,6 +604,8 @@ class ViLBlock(nn.Module):
     def reset_parameters(self):
         self.layer.reset_parameters()
         self.norm.reset_parameters()
-        nn.init.ones_(self.learnable_skip)
+        
+        # nn.init.ones_(self.learnable_skip)
+
 
 
