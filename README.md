@@ -4,9 +4,13 @@ This is the official PyTorch implementation of our paper 3SmLSTM: Symmetric Feat
 The paper is published in ICIC 2025 and can be accessed at [Springer](https://link.springer.com/chapter/10.1007/978-981-96-9908-7_20) or [BaiduNetdisk](https://pan.baidu.com/s/1iF2f5V97WYHfTuSGUFvnlA?pwd=1024).
 
 ## Efficiency
-| Model | Parameters | FLOPs | Acc on NTU 120 X-Sub | Acc on NTU 120 X-Set|
-| -------- | ------- | -------- | -------- | -------- |
-| 3SmLSTM | 2.0M | 2.60G |  89.9 | 91.2 |
+| Methods | Publication | Parameters | FLOPs | Acc on NTU 120 X-Sub | Acc on NTU 120 X-Set|
+| -------- | ------- | ------- | -------- | -------- | -------- |
+| MSS-GCN |  TCSVT 2024 |  7.0M | 9.7G |  88.9 | 90.6 |
+| STFD-Net |  TCSVT 2024 |  4.3M | 2.89G |  89.3 | 90.9 |
+| SelfGCN | TIP 2024 | 2.5M | 2.67G |  89.4 | 91.0 |
+| SkeleFormer | PR 2026 | - | - |  89.7 | 90.8 |
+| 3SmLSTM | ICIC 2025 | 2.0M | 2.60G |  89.9 | 91.2 |
 
 ####  3SmLSTM architecture
 <p align="center">
