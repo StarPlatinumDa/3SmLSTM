@@ -88,7 +88,7 @@ python main.py --weights pretrained weights/ntu 60/joint/runs-137-40778.pt --pha
 # Training
 
 ```
-python main.py --config config/nturgbd-cross-subject/joint.yaml --device 0 --base-lr 2.5e-2
+python main.py --config config/nturgbd-cross-subject/joint.yaml --device 0 --base-lr 2.5e-2 --model model.3SmLSTM.Model
 ```
 
 ## Acknowledgements
