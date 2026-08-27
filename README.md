@@ -82,7 +82,7 @@ We provide the [pretrained model weights](https://github.com/StarPlatinumDa/3SmL
 To use the pretrained weights for evaluation, please run the following command:
 
 ```
-python main.py --weights pretrained weights/ntu 60/joint/runs-137-40778.pt --phase test --save-score True --config config/nturgbd-cross-subject/joint.yaml --device 0 --start-epoch 137
+python main.py --weights pretrained weights/ntu 60/joint/runs-137-40778.pt --phase test --save-score True --config config/nturgbd-cross-subject/joint.yaml --device 0 --start-epoch 137 --model model.3SmLSTM.Model
 ```
 
 # Training
