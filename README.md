@@ -17,6 +17,14 @@ The paper is published in ICIC 2025 and can be accessed at [Springer](https://li
    <img src="full.png" alt="drawing" width="800"/>
 </p>
 
+#### Comparison between LSTMs and our 3SmLSTM.
+<p align="center">
+   <img src="intro.png" alt="drawing" width="800"/>
+</p>
+ (a) LSTMs. With scalar memory and limited sigmoid gating. (b) The proposed 3SmLSTM. Including, 1. The specific skeletal connectivity encoding (SSCE), which
+confers a degree of sequentiality to the joint sequences and ensures the preservation of topology during training. 2. mLSTM with larger matrix memory and exponential gating which enables wider range of control. 3. The symmetric temporal path capturing multi-scale temporal information while compensating for the non-sequential information through a branch without mLSTM.
+
+
 
 #  Preparation
 
