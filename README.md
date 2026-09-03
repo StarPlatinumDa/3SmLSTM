@@ -26,7 +26,7 @@ confers a degree of sequentiality to the joint sequences and ensures the preserv
 
 ### The Specific Skeletal Connectivity Encoding(SSCE).
 <p align="center">
-   <img src="code.png" alt="drawing" width="700"/>
+   <img src="code.png" alt="drawing" width="300"/>
 </p>
 
 ### Spatial-temporal second-order pooling.
